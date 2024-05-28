@@ -1,0 +1,53 @@
+@extends('layouts.topbar')
+     
+@section('content')
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <center> <h2>Daftar Tanaman</h2> </center>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('tanaman.create') }}"> Tambah Tanaman </a>
+            </div>
+            <br>
+        </div>
+    </div>
+    
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+     
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Image</th>
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($tanaman as $tanamans)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $tanamans->nama_tanaman}}</td>
+            <td><img src="/gambar_tanaman/{{ $tanamans->gambar_tanaman }}" width="100px"></td>
+            <td>
+                <form action="{{ route('tanaman.destroy',$tanamans->id) }}" method="POST">
+     
+                    <a class="btn btn-info" href="{{ route('tanaman.show',$tanamans->id) }}">Show</a>
+      
+                    <a class="btn btn-primary" href="{{ route('tanaman.edit',$tanamans->id) }}">Edit</a>
+     
+                    @csrf
+                    @method('DELETE')
+        
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+    
+    {!! $tanaman->links() !!}
+        
+@endsection
