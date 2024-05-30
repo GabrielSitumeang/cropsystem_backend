@@ -12,6 +12,7 @@ use App\Http\Controllers\PenanamanController;
 use App\Http\Controllers\PersiapanLahanController;
 use App\Http\Controllers\RotasiTanamanController;
 use App\Http\Controllers\AjukanInformasiController;
+use App\Http\Controllers\KomunitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,7 @@ Route::resource('/panen', PanenController::class);
 Route::resource('/pascapanen', PascaPanenController::class);
 
 Route::resource('/ajukan', AjukanInformasiController::class);
+Route::get('/ajukan/{id}/approve', [AjukanInformasiController::class, 'approve'])->name('ajukan.approve');
+
+Route::resource('/komunitas', KomunitasController::class);
+Route::get('/komunitas/{id}/delete', [KomunitasController::class, 'approve'])->name('komunitas.delete');

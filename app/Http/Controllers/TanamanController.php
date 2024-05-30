@@ -10,7 +10,6 @@ class TanamanController extends Controller
     public function index()
     {
         $tanaman = Tanaman::latest()->paginate(5);
-    
         return view('tanaman.index',compact('tanaman'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }

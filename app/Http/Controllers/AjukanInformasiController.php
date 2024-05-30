@@ -9,7 +9,7 @@ class AjukanInformasiController extends Controller
     // Menampilkan daftar informasi dengan status "request"
     public function index()
     {
-        $informasi = AjukanInformasi::where('status', 'request')->get();
+        $informasi = AjukanInformasi::where('status', 'Request')->get();
         return view('ajukan.index', compact('informasi'));
     }
 
@@ -26,7 +26,7 @@ class AjukanInformasiController extends Controller
         $informasi = AjukanInformasi::findOrFail($id);
         $informasi->status = 'approve';
         $informasi->save();
-
+        // return $informasi;
         return redirect()->route('ajukan.index')->with('success', 'Informasi berhasil di-approve.');
     }
 }
