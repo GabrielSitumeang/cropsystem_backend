@@ -40,8 +40,8 @@
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $info->name }}</td>
-                                                <td>{{ $info->body }}</td>
-                                                <td>{{ $info->created_at }}</td>
+                                                <td>{{ limit_words($info->body, 25) }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($info->created_at)->translatedFormat('d F Y H:i:s') }}</td>
                                                 <td>{{ $info->jumlah_komentar}}</td>
                                                 <td>
                                                     <a href="{{ route('komunitas.show', $info->id) }}" class="btn btn-primary">Show</a>
@@ -64,5 +64,17 @@
         </div>
     </section>
 </main>
+@php
+function limit_words($string, $limit = 25)
+    {
+        $words = explode(' ', $string);
+        if (count($words) <= $limit) {
+            return $string;
+        }
+
+        return implode(' ', array_slice($words, 0, $limit)) . '...';
+    }    
+@endphp
+
 @endsection
 

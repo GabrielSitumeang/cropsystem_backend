@@ -11,7 +11,7 @@
                         <div class="content-header">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h2 class="mb-0">{{ __('Form Tambah Tanaman') }}</h2>
+                                    <h2 class="mb-0">{{ __('Tambah Tanaman') }}</h2>
                                 </div><!-- /.col -->
                             </div>
                             <div class="page-header-content d-lg-flex border-top">
@@ -44,12 +44,7 @@
                                         <div class="form-group row">
                                             <label for="Nama" class="col-sm-2 col-form-label">Nama Tanaman :<span></span></label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control @error('nama_tanaman') is-invalid @enderror" name="nama_tanaman" id="nama_tanaman" placeholder="" value="{{ old('nama_tanaman') }}">
-                                                @error('gelar_depan')
-                                                    <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                                                <input type="text" class="form-control" name="nama_tanaman" id="nama_tanaman" placeholder="" value="{{ old('nama_tanaman') }}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -58,12 +53,7 @@
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" name="gambar_tanaman" id="inputFile" value="{{ old('gambar_tanaman') }}">
                                                     <label class="custom-file-label" for="gambar_tanaman">Pilih tanaman</label>
-                                                    </div>
-                                                @error('gambar_tanaman')
-                                                    <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
+                                                </div>
                                             </div>
                                         </div>
 
@@ -88,7 +78,7 @@
         </div>
     </section>
 </main>
-@if ($errors->any())
+{{-- @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
@@ -97,6 +87,6 @@
             @endforeach
         </ul>
     </div>
-@endif
+@endif --}}
     
 @endsection

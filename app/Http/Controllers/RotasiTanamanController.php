@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RotasiTanaman;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class RotasiTanamanController extends Controller
@@ -19,13 +20,14 @@ class RotasiTanamanController extends Controller
 
     public function create()
     {
+        $tanaman = Tanaman::get();
         
         $jenisinformasiOptions = [
             'Sesudah' => 'Sesudah',
             'Sebelum' => 'Sebelum',
         ];
 
-        return view('rotasi.create', compact('jenisinformasiOptions'));
+        return view('rotasi.create', compact('jenisinformasiOptions'), compact('tanaman'));
     }
 
     public function store(Request $request)
@@ -54,18 +56,19 @@ class RotasiTanamanController extends Controller
 
     public function show(RotasiTanaman $rotasi)
     {
-        return view('.show',compact('pupuk'));
+        return view('rotasi.show',compact('rotasi'));
     }
 
 
     public function edit($id)
     {
+        $tanaman = Tanaman::get();
         $rotasi = RotasiTanaman::find($id);
         $jenisinformasiOptions = [
             'Sesudah' => 'Sesudah',
             'Sebelum' => 'Sebelum',
         ];
-        return view('rotasi.edit', compact('rotasi', 'jenisinformasiOptions'));
+        return view('rotasi.edit', compact('rotasi', 'jenisinformasiOptions', 'tanaman'));
     }
 
 

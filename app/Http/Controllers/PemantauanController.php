@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pemantauan;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class PemantauanController extends Controller
@@ -19,7 +20,8 @@ class PemantauanController extends Controller
 
     public function create()
     {
-        return view('pemantauan.create');
+        $tanaman = Tanaman::get();
+        return view('pemantauan.create', compact('tanaman'));
     }
 
 
@@ -27,7 +29,7 @@ class PemantauanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_tanaman' => 'required',
+            'namatanaman' => 'required',
             'judul' => 'required',
             'isi' => 'required',
             'gambar_tanaman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
