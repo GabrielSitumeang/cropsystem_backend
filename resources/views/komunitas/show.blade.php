@@ -16,7 +16,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('komunitas.index')}}" class="breadcrumb-item"><i class="people_outline"></i></a>
+                                        <a href="{{route('komunitas.index')}}" class="breadcrumb-item"><i class="fas fa-people-arrows"></i></a>
                                         <a href="{{route('komunitas.index')}}" class="breadcrumb-item">Postingan</a>
                                         <span class="breadcrumb-item active">Detail</span>
                                     </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <p>Pada Tanggal: {{ $posts->created_at }}</p>
+                                    <p>Pada Tanggal: {{ \Carbon\Carbon::parse($posts->created_at)->translatedFormat('d F Y H:i:s')  }}</p>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -71,18 +71,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4>Komentar</h4>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 @foreach($comments as $comment)
-                                <fieldset>
+                                <fieldset style="border: 1px solid #d4d4d4;padding: 10px;border-radius: 5px;" class="mb-3">
                                     <div class="form-group row">
                                         <div class="col">
                                             <p>{{ $comment->name }}</p>
                                         </div>
-                                        <div class="col">
-                                            <p>{{ $comment->created_at }}</p>
+                                        <div class="col text-right">
+                                            <p>{{ \Carbon\Carbon::parse($comment->created_at)->translatedFormat('d F Y H:i:s') }}</p>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="form-group">
                                         <p>{{ $comment->comment }}</p>
                                     </div>
                                 </fieldset>

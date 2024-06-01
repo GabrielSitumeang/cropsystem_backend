@@ -16,7 +16,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('pupuk.index')}}" class="breadcrumb-item"><i class="fa fa-repeat"></i></a>
+                                        <a href="{{route('pupuk.index')}}" class="breadcrumb-item"><i class="fas fa-eye-dropper"></i></a>
                                         <a href="{{route('pupuk.index')}}" class="breadcrumb-item">Pupuk</a>
                                         <span class="breadcrumb-item active">Tambah</span>
                                     </div>

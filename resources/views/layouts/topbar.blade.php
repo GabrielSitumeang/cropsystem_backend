@@ -19,6 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="{{ asset('lte/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{ asset('lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -96,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon 	fas fa-seedling"></i>
               <p>
                 Budidaya Tanaman  
                 <i class="right fas fa-angle-left"></i>
@@ -162,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Ajukan Informasi /-->   
           <li class="nav-item">
             <a href="{{ route('ajukan.index') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-info-circle"></i>
               <p>
                 Ajukan Informasi   
               </p>
@@ -173,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- HAMA DAN PENYAKIT /-->        
           <li class="nav-item">
             <a href="{{ route('hama.index') }}"  class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-shield-virus"></i>
               <p>
                 Hama dan Penyakit   
               </p>
@@ -184,7 +185,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Komunitas /-->        
           <li class="nav-item">
             <a href="{{ route('komunitas.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-people-arrows"></i>
               <p>
                 Komunitas
               </p>
@@ -249,6 +250,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
 <!-- jQuery -->
 <script src="{{ asset('lte/plugins/jquery/jquery.min.js')}}"></script>

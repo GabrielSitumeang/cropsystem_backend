@@ -16,7 +16,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('persiapan.index')}}" class="breadcrumb-item"><i class="fa fa-repeat"></i></a>
+                                        <a href="{{route('persiapan.index')}}" class="breadcrumb-item"><i class="fas fa-map-pin"></i></a>
                                         <a href="{{route('persiapan.index')}}" class="breadcrumb-item">Persiapan Lahan</a>
                                         <span class="breadcrumb-item active">Edit</span>
                                     </div>

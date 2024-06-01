@@ -17,7 +17,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('hama.index')}}" class="breadcrumb-item"><i class="fa fa-rotate-left"></i></a>
+                                        <a href="{{route('hama.index')}}" class="breadcrumb-item"><i class="fas fa-shield-virus"></i></a>
                                         <a href="{{route('hama.index')}}" class="breadcrumb-item">Hama dan Penyakit</a>
                                         <span class="breadcrumb-item active">Detail</span>
                                     </div>

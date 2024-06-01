@@ -16,7 +16,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('irigasi.index')}}" class="breadcrumb-item"><i class="fa fa-repeat"></i></a>
+                                        <a href="{{route('irigasi.index')}}" class="breadcrumb-item"><i class="fas fa-fill-drip"></i></a>
                                         <a href="{{route('irigasi.index')}}" class="breadcrumb-item">Irigasi</a>
                                         <span class="breadcrumb-item active">Tambah</span>
                                     </div>

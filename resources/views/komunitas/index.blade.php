@@ -75,6 +75,17 @@ function limit_words($string, $limit = 25)
         return implode(' ', array_slice($words, 0, $limit)) . '...';
     }    
 @endphp
+<script>
+    $(document).ready(function() {
+        $('#dataTableLokasipelayanan').DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        });
+    });
+</script>
+
 
 @endsection
 

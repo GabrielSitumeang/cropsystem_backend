@@ -11,13 +11,13 @@
                         <div class="content-header">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h2 class="mb-0">{{ __('Tampilkan Data Perssiapan Lahan') }}</h2>
+                                    <h2 class="mb-0">{{ __('Tampilkan Data Persiapan Lahan') }}</h2>
                                 </div><!-- /.col -->
                             </div>
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('persiapan.index')}}" class="breadcrumb-item"><i class="fa fa-rotate-left"></i></a>
+                                        <a href="{{route('persiapan.index')}}" class="breadcrumb-item"><i class="fas fa-map-pin"></i></a>
                                         <a href="{{route('persiapan.index')}}" class="breadcrumb-item">Persiapan</a>
                                         <span class="breadcrumb-item active">Detail</span>
                                     </div>

@@ -5,12 +5,14 @@ use App\Models\Komunitas;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class KomunitasController extends Controller
 {
     // Menampilkan daftar informasi dengan status "request"
     public function index()
     {
+        Carbon::setLocale('id');
         $informasi = DB::table('posts')
             ->join('users', 'posts.user_id', '=', 'users.id')
             ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
@@ -34,7 +36,7 @@ class KomunitasController extends Controller
     // Menampilkan detail informasi
     public function show($id)
     {
-
+        Carbon::setLocale('id');
         $posts = DB::table('posts')
             ->select(
                 'posts.body',

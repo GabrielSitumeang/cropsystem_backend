@@ -17,7 +17,7 @@
                             <div class="page-header-content d-lg-flex border-top">
                                 <div class="d-flex">
                                     <div class="breadcrumb py-2">
-                                        <a href="{{route('rotasi.index')}}" class="breadcrumb-item"><i class="fa fa-rotate-left"></i></a>
+                                        <a href="{{route('rotasi.index')}}" class="breadcrumb-item"><i class="fas fa-sync"></i></a>
                                         <a href="{{route('rotasi.index')}}" class="breadcrumb-item">Rotasi Tanaman</a>
                                         <span class="breadcrumb-item active">Detail</span>
                                     </div>
