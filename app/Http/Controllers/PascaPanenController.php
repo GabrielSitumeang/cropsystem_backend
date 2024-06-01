@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PascaPanen;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class PascaPanenController extends Controller
@@ -19,7 +20,8 @@ class PascaPanenController extends Controller
 
     public function create()
     {
-        return view('pascapanen.create');
+        $tanaman = Tanaman::get();
+        return view('pascapanen.create', compact('tanaman'));
     }
 
 
@@ -58,7 +60,8 @@ class PascaPanenController extends Controller
 
     public function edit(PascaPanen $pascapanen)
     {
-        return view('pascapanen.edit',compact('pascapanen'));
+        $tanaman = Tanaman::get();
+        return view('pascapanen.edit',compact('pascapanen', 'tanaman'));
     }
 
 

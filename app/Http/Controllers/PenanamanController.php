@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penanaman;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class PenanamanController extends Controller
@@ -19,7 +20,8 @@ class PenanamanController extends Controller
 
     public function create()
     {
-        return view('penanaman.create');
+        $tanaman = Tanaman::get();
+        return view('penanaman.create', compact('tanaman'));
     }
 
 
@@ -27,7 +29,7 @@ class PenanamanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_tanaman' => 'required',
+            'namatanaman' => 'required',
             'judul' => 'required',
             'isi' => 'required',
             'gambar_tanaman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -59,7 +61,8 @@ class PenanamanController extends Controller
 
     public function edit(Penanaman $penanaman)
     {
-        return view('penanaman.edit',compact('penanaman'));
+        $tanaman = Tanaman::get();
+        return view('penanaman.edit',compact('penanaman', 'tanaman'));
     }
 
 

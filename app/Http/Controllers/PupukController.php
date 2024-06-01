@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pupuk;
+use App\Models\Tanaman;
 
 class PupukController extends Controller
 {
@@ -19,6 +20,8 @@ class PupukController extends Controller
 
     public function create()
     {
+
+        $tanaman = Tanaman::get();
         $tahapanOptions = [
             'Tahap Pembibitan' => 'Tahap Pembibitan',
             'Tahap Vegetatif' => 'Tahap Vegetatif',
@@ -32,7 +35,7 @@ class PupukController extends Controller
             'Pemupukan Kimiawi' => 'Pemupukan Kimiawi',
         ];
 
-        return view('pupuk.create', compact('tahapanOptions', 'jenispemupukanOptions'));
+        return view('pupuk.create', compact('tahapanOptions', 'jenispemupukanOptions', 'tanaman'));
     }
 
     public function store(Request $request)
@@ -70,6 +73,7 @@ class PupukController extends Controller
 
     public function edit($id)
     {
+        $tanaman = Tanaman::get();
         $pupuk = Pupuk::find($id);
         $tahapanOptions = [
             'Tahap Pembibitan' => 'Tahap Pembibitan',
@@ -83,7 +87,7 @@ class PupukController extends Controller
             'Pemupukan Organik' => 'Pemupukan Organik',
             'Pemupukan Kimiawi' => 'Pemupukan Kimiawi',
         ];
-        return view('pupuk.edit', compact('pupuk', 'tahapanOptions', 'jenispemupukanOptions'));
+        return view('pupuk.edit', compact('pupuk', 'tahapanOptions', 'jenispemupukanOptions', 'tanaman'));
     }
 
 

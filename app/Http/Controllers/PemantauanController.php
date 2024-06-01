@@ -24,8 +24,6 @@ class PemantauanController extends Controller
         return view('pemantauan.create', compact('tanaman'));
     }
 
-
-
     public function store(Request $request)
     {
         $request->validate([
@@ -50,21 +48,16 @@ class PemantauanController extends Controller
                         ->with('sukses','Data berhasil ditambahkan.');
     }
 
-
-
     public function show(Pemantauan $pemantauan)
     {
         return view('pemantauan.show',compact('pemantauan'));
     }
 
-
-
     public function edit(Pemantauan $pemantauan)
     {
-        return view('pemantauan.edit',compact('pemantauan'));
+        $tanaman = Tanaman::get();
+        return view('pemantauan.edit',compact('pemantauan', 'tanaman'));
     }
-
-
 
     public function update(Request $request, Pemantauan $pemantauan)
     {
@@ -88,8 +81,6 @@ class PemantauanController extends Controller
         return redirect()->route('pemantauan.index')
                         ->with('sukses','Data berhasil diupdate');
     }
-  
-
 
     public function destroy(Pemantauan $pemantauan)
     {

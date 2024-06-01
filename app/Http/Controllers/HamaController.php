@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Hama;
+use App\Models\Tanaman;
 
 class HamaController extends Controller
 {
@@ -19,6 +20,7 @@ class HamaController extends Controller
 
     public function create()
     {
+        $tanaman = Tanaman::get();
         $tahapanOptions = [
             'Tahap Pembibitan' => 'Tahap Pembibitan',
             'Tahap Vegetatif' => 'Tahap Vegetatif',
@@ -27,7 +29,7 @@ class HamaController extends Controller
             'Tahap Panen' => 'Tahap Panen'
         ];
 
-        return view('hama.create', compact('tahapanOptions'));
+        return view('hama.create', compact('tahapanOptions', 'tanaman'));
     }
 
     public function store(Request $request)
@@ -38,7 +40,8 @@ class HamaController extends Controller
             'judul' => 'required',
             'gejala' => 'required',
             'keterangan' => 'required',
-            'gambar_tanaman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar_tanaman' => 'required',
+            'gambar_tanaman.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
   
         $input = $request->all();
@@ -65,6 +68,7 @@ class HamaController extends Controller
 
     public function edit($id)
     {
+        $tanaman = Tanaman::get();
         $hama = Hama::find($id);
         $tahapanOptions = [
             'Tahap Pembibitan' => 'Tahap Pembibitan',
@@ -74,7 +78,7 @@ class HamaController extends Controller
             'Tahap Panen' => 'Tahap Panen'
         ];
     
-        return view('hama.edit', compact('hama', 'tahapanOptions'));
+        return view('hama.edit', compact('hama', 'tahapanOptions', 'tanaman'));
     }
 
 

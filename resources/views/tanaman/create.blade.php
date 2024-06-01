@@ -27,7 +27,7 @@
                         <div class="container-fluid">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                    <strong>Whoops!</strong> Terdapat beberapa kesalahan pada inputan Anda.<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -67,7 +67,6 @@
                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
                                         </div>
-                                        
                                     </form>
                                 </div>
                             </div>
@@ -75,7 +74,7 @@
                     </div>
                 </div>              
             </div>
-        </div>
+        
     </section>
 </main>
 {{-- @if ($errors->any())

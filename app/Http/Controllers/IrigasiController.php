@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Irigasi;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class IrigasiController extends Controller
@@ -19,7 +20,8 @@ class IrigasiController extends Controller
 
     public function create()
     {
-        return view('irigasi.create');
+        $tanaman = Tanaman::get();
+        return view('irigasi.create', compact('tanaman'));
     }
 
 
@@ -27,7 +29,7 @@ class IrigasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_tanaman' => 'required',
+            'namatanaman' => 'required',
             'judul' => 'required',
             'isi' => 'required',
             'gambar_tanaman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -59,7 +61,8 @@ class IrigasiController extends Controller
 
     public function edit(Irigasi $irigasi)
     {
-        return view('irigasi.edit',compact('irigasi'));
+        $tanaman = Tanaman::get();
+        return view('irigasi.edit',compact('irigasi', 'tanaman'));
     }
 
 

@@ -40,14 +40,18 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group row">
-                                    <div class="col">
+                                <fieldset style="border: 1px solid #000;padding: 10px;border-radius: 5px;" >
+                                    <div class="mb-4" align="center">
+                                        <img src="{{ asset('storage/posts/' . $posts->image) }}" width="600px">
+                                    </div>
+                                   <div class="form-group">
+                                    <div class="">
                                         <p>{{ $posts->body }}</p>
                                     </div>
-                                    <div class="col">
-                                        <img src="/posting/{{ $posts->image }}" width="500px">
-                                    </div>
-                                </div>
+                                    
+                                </div> 
+                                </fieldset>
+                                
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -57,29 +61,32 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group row">
-                                    <div class="col">
-                                        <a href="#" class="breadcrumb-item"><i class="people_outline"></i></a>
-                                        <a href="#" class="breadcrumb-item">{{ $posts->like_count }}</a>
-                                    </div> | 
-                                    <div class="col">
-                                        <a href="#" class="breadcrumb-item"><i class="people_outline"></i></a>
-                                        <a href="#" class="breadcrumb-item">{{ $posts->comment_count }}</a>
+                                    <div class="col-auto d-flex align-items-center mr-2">
+                                        <a href="#" class="" style="margin-left: 5px;margin-right: 5px;"><i class="far fa-thumbs-up"></i></a>
+                                        <a href="#" class="" style="margin-left: 5px;margin-right: 5px;">{{ $posts->like_count }}</a>
+                                    </div>|
+                                    <div class="col ml-2">
+                                        <a href="#" class="breadcrumb-item" style="margin-left: 5px;margin-right: 5px;"><i class="far fa-comment-dots"></i></a>
+                                        <a href="#" class="" style="margin-left: 5px;margin-right: 5px;">{{ $posts->comment_count }}</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 @foreach($comments as $comment)
-                                <div class="form-group row">
-                                    <div class="col">
-                                        <p>{{ $comment->name }}</p>
+                                <fieldset>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <p>{{ $comment->name }}</p>
+                                        </div>
+                                        <div class="col">
+                                            <p>{{ $comment->created_at }}</p>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>{{ $comment->created_at }}</p>
+                                    <div>
+                                        <p>{{ $comment->comment }}</p>
                                     </div>
-                                </div>
-                                <div>
-                                    <p>{{ $comment->comment }}</p>
-                                </div>
+                                </fieldset>
+                                
                                 @endforeach
                             </div>
                         </div>

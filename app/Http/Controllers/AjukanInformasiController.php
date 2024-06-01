@@ -10,7 +10,7 @@ class AjukanInformasiController extends Controller
     public function index()
     {
         $informasi = AjukanInformasi::where('status', 'Request')->get();
-        return view('ajukan.index', compact('informasi'));
+        return view('ajukan.index', compact('informasi'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     // Menampilkan detail informasi

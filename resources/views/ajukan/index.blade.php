@@ -29,7 +29,7 @@
                                     <table id="dataTableLokasipelayanan" class="table table-bordered table-striped"  width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>No</th>
                                                 <th>Nama Tanaman</th>
                                                 <th>Judul</th>
                                                 <th>Isi</th>
@@ -38,7 +38,7 @@
                                             </tr>
                                             @foreach ($informasi as $info)
                                             <tr>
-                                                <td>{{ $info->id }}</td>
+                                                <td>{{ ++$i }}</td>
                                                 <td>{{ $info->namatanaman }}</td>
                                                 <td>{{ $info->judul }}</td>
                                                 <td>{{ $info->isi }}</td>

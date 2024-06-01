@@ -1,6 +1,150 @@
 @extends('layouts.topbar')
    
 @section('content')
+
+    <main>
+    <section>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 margin-tb">
+                        <div class="content-header">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <h2 class="mb-0">{{ __('Tampilkan Data Hama dan Penyakit') }}</h2>
+                                </div><!-- /.col -->
+                            </div>
+                            <div class="page-header-content d-lg-flex border-top">
+                                <div class="d-flex">
+                                    <div class="breadcrumb py-2">
+                                        <a href="{{route('hama.index')}}" class="breadcrumb-item"><i class="fa fa-rotate-left"></i></a>
+                                        <a href="{{route('hama.index')}}" class="breadcrumb-item">Hama dan Penyakit</a>
+                                        <span class="breadcrumb-item active">Detail</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="pull-right">
+                            <a class="btn btn-primary" href="{{ route('hama.index') }}"> Back</a>
+                        </div>
+                        <table class="table mt-2">
+                            <tr>
+                                <td width="20%">
+                                    <strong>Nama Tanaman</strong>
+                                </td>
+                                <td width="5%">:</td>
+                                <td width="75%">{{ $hama->namatanaman }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Tahapan</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->tahapanPupuk }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Judul</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->judul }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Gejala</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->gejala }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Info Lebih Lanjut</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->info_lebih_lanjut }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Rekomendasi</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->rekomendasi }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Pengendalian Hayati</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->pengendalian_hayati }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Pengendalian Kimiawi</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->pengendalian_kimiawi }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Obati Penyebab</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->obati_penyebab }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Tindakan Pencegahan</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->tindakan_pencegahan }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Cegah Penyebab</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->cegah_penyebab }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Keterangan</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->keterangan }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Tahapan</strong>
+                                </td>
+                                <td>:</td>
+                                <td>{{ $hama->tahapanPupuk }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Gambar</strong>
+                                </td>
+                                <td>:</td>
+                                <td><img src="/gambar_tanaman/{{ $hama->gambar_tanaman }}" width="500px"></td>
+                            </tr>
+                        </table>
+                            {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Gambar :</strong><br>
+                                    <img src="/gambar_tanaman/{{ $hama->gambar_tanaman }}" width="500px"> <br>
+                                </div>
+                            </div> --}}
+                        {{-- </div> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">

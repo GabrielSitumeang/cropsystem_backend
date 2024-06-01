@@ -27,7 +27,7 @@
                         <div class="container-fluid">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                    <strong>Whoops!</strong> Terdapat beberapa kesalahan pada inputan Anda.<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -85,10 +85,11 @@
                                                 <div class="custom-file">
                                                     {{-- <input type="file" class="form-control" name="putusanPN" accept=".pdf"> --}}
                                                     <input type="file" class="custom-file-input" name="gambar_tanaman" id="inputFile">
-                                                    <img src="/gambar_tanaman/{{ $rotasi->gambar_tanaman }}" width="300px">
+                                                    
                                                     <label class="custom-file-label" for="gambar_tanaman">Pilih tanaman</label>
                                                      {{-- <input type="file" name="gambar_tanaman" class="form-control" placeholder="Gambar"> --}}
                                                 </div>
+                                                <img src="/gambar_tanaman/{{ $rotasi->gambar_tanaman }}" width="300px">
                                             </div>
                                         </div>
                                             <div class="cpl mt-5 col-xs-12 col-sm-12 col-md-12 text-right">
@@ -103,7 +104,6 @@
                     </div>
                 </div>              
             </div>
-        </div>
     </section>
 </main>
 

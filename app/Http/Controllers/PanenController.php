@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Panen;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class PanenController extends Controller
@@ -19,7 +20,8 @@ class PanenController extends Controller
 
     public function create()
     {
-        return view('panen.create');
+        $tanaman = Tanaman::get();
+        return view('panen.create', compact('tanaman'));
     }
 
 
@@ -58,7 +60,8 @@ class PanenController extends Controller
 
     public function edit(Panen $panen)
     {
-        return view('panen.edit',compact('panen'));
+        $tanaman = Tanaman::get();
+        return view('panen.edit',compact('panen', 'tanaman'));
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PersiapanLahan;
+use App\Models\Tanaman;
 use Illuminate\Http\Request;
 
 class PersiapanLahanController extends Controller
@@ -19,7 +20,8 @@ class PersiapanLahanController extends Controller
 
     public function create()
     {
-        return view('persiapan.create');
+        $tanaman = Tanaman::get();
+        return view('persiapan.create', compact('tanaman'));
     }
 
 
@@ -27,7 +29,7 @@ class PersiapanLahanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_tanaman' => 'required',
+            'namatanaman' => 'required',
             'judul' => 'required',
             'isi' => 'required',
             'gambar_tanaman' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -59,7 +61,8 @@ class PersiapanLahanController extends Controller
 
     public function edit(PersiapanLahan $persiapan)
     {
-        return view('persiapan.edit',compact('persiapan'));
+        $tanaman = Tanaman::get();
+        return view('persiapan.edit',compact('persiapan', 'tanaman'));
     }
 
 
